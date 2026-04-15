@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #007aff;
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --text-muted: #666666;
+  --border-color: #e5e5e5;
+  --sidebar-bg: #f8f9fa;
+  --code-bg: #1e1e1e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --text-muted: #999999;
+    --border-color: #333333;
+    --sidebar-bg: #1a1a1a;
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 隐藏滚动条但保留功能 */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Code highlight override */
+pre[class*="language-"] {
+  margin: 0 !important;
+  border-radius: 0.5rem !important;
+  background: var(--code-bg) !important;
+}
+
+/* Markdown 样式 */
+.markdown-body h1 {
+  @apply text-3xl font-bold mb-6 pb-2 border-b border-gray-200 dark:border-gray-700;
+}
+
+.markdown-body h2 {
+  @apply text-2xl font-bold mt-10 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700;
+}
+
+.markdown-body h3 {
+  @apply text-xl font-bold mt-8 mb-4;
+}
+
+.markdown-body p {
+  @apply mb-4 leading-7;
+}
+
+.markdown-body ul {
+  @apply list-disc pl-6 mb-4 space-y-2;
+}
+
+.markdown-body ol {
+  @apply list-decimal pl-6 mb-4 space-y-2;
+}
+
+.markdown-body a {
+  @apply text-ios-blue hover:underline;
+}
+
+.markdown-body code:not([class*="language-"]) {
+  @apply px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-sm font-mono text-ios-orange;
+}
