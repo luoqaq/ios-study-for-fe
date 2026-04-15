@@ -30,7 +30,7 @@ export default function CodeCompare({
 
       <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-gray-800">
         {/* Left Side - iOS */}
-        <div className="flex-1 w-full bg-gray-50 dark:bg-[#1e1e1e]">
+        <div className="flex-1 min-w-0 w-full bg-gray-50 dark:bg-[#1e1e1e]">
           <div className="px-4 py-2 text-xs font-semibold tracking-wider text-gray-500 uppercase flex items-center gap-2 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
             <span className="w-2 h-2 rounded-full bg-ios-blue"></span>
             {leftTitle}
@@ -51,7 +51,7 @@ export default function CodeCompare({
         </div>
 
         {/* Right Side - Web */}
-        <div className="flex-1 w-full bg-gray-50 dark:bg-[#1e1e1e]">
+        <div className="flex-1 min-w-0 w-full bg-gray-50 dark:bg-[#1e1e1e]">
           <div className="px-4 py-2 text-xs font-semibold tracking-wider text-gray-500 uppercase flex items-center gap-2 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
             <span className="w-2 h-2 rounded-full bg-[#F7DF1E]"></span>
             {rightTitle}
