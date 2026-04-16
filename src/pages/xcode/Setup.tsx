@@ -87,13 +87,13 @@ export default function Setup() {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/xcode"
+          to="/starter"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← Xcode 简介
+          ← 开发起步
         </Link>
         <Link
-          to="/xcode/interface"
+          to="/starter/interface"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
           下一篇：界面导览 →

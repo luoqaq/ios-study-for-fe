@@ -118,13 +118,13 @@ something = 42; // 合法`}
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/objc/basics/intro"
+          to="/objc-maintenance/basics/intro"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
           ← 简介
         </Link>
         <Link
-          to="/objc/basics/strings"
+          to="/objc-maintenance/basics/strings"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
           下一篇：字符串 →

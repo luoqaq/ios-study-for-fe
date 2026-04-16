@@ -201,10 +201,10 @@ if (tenEighty === alsoTenEighty) {
           ← 控制流
         </Link>
         <Link
-          to="/swift/oop/enum"
+          to="/swift/oop/value-reference-deep"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
-          下一篇：枚举 Enum →
+          下一篇：值类型与引用类型深入 →
         </Link>
       </div>
     </div>

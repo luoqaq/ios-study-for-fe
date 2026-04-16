@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { sidebar, SidebarItem } from "@/data/config";
+import { getSidebarKey, sidebar, SidebarItem } from "@/data/config";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -9,21 +9,8 @@ interface SidebarProps {
 export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
   const location = useLocation();
   const currentPath = location.pathname;
-
-  // Determine which sidebar config to show based on current path
-  let currentSidebar: SidebarItem[] = [];
-
-  if (currentPath.startsWith("/guide")) {
-    currentSidebar = sidebar["/guide"];
-  } else if (currentPath.startsWith("/objc")) {
-    currentSidebar = sidebar["/objc"];
-  } else if (currentPath.startsWith("/swift")) {
-    currentSidebar = sidebar["/swift"];
-  } else if (currentPath.startsWith("/xcode")) {
-    currentSidebar = sidebar["/xcode"];
-  } else if (currentPath.startsWith("/practice")) {
-    currentSidebar = sidebar["/practice"];
-  }
+  const sidebarKey = getSidebarKey(currentPath);
+  const currentSidebar: SidebarItem[] = sidebarKey ? sidebar[sidebarKey] : [];
 
   // Don't show sidebar on home page
   if (currentPath === "/") {

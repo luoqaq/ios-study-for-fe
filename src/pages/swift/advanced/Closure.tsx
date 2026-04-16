@@ -154,16 +154,16 @@ const strings = numbers.map((num) => String(num));`}
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/swift/oop/generics"
+          to="/swift/oop/generics-advanced"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← 泛型 Generics
+          ← 泛型与协议导向编程
         </Link>
         <Link
-          to="/swift/advanced/concurrency"
+          to="/swift/advanced/closure-memory"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
-          下一篇：并发 async/await →
+          下一篇：闭包捕获与内存管理 →
         </Link>
       </div>
     </div>

@@ -95,10 +95,10 @@ function ContentView() {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/swift/advanced/property-wrapper"
+          to="/swift/advanced/combine"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← 属性包装器
+          ← Combine 响应式编程
         </Link>
         <Link
           to="/swift/swiftui/state-binding"

@@ -1,168 +1,194 @@
 import { Link } from "react-router-dom";
-import { BookOpen, Code2, Hammer, Apple, ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen, Hammer, Layers3, Wrench } from "lucide-react";
+import { nav } from "@/data/config";
+
+const stages = [
+  {
+    badge: "L1",
+    title: "入门认知",
+    desc: "完成前端到 iOS 的心智切换，先看懂工具链、内存模型和运行时差异。",
+    path: "/roadmap",
+    outcome: "学完后能看懂 iOS 基本概念和工程入口",
+  },
+  {
+    badge: "L2",
+    title: "页面开发",
+    desc: "先把 Xcode 和 UIKit 跑通，能做列表、导航、简单表单和页面跳转。",
+    path: "/starter",
+    outcome: "学完后能独立完成基础页面需求",
+  },
+  {
+    badge: "L3",
+    title: "业务进阶",
+    desc: "进入 Swift、并发、网络请求和 SwiftUI，补齐现代 iOS 开发主线。",
+    path: "/swift",
+    outcome: "学完后能完成中等复杂度业务模块",
+  },
+  {
+    badge: "L4",
+    title: "OC 维护",
+    desc: "针对 UIKit/Objective-C 历史项目，重点理解 Delegate、KVO、ARC 和常见包袱。",
+    path: "/objc-maintenance",
+    outcome: "学完后能接手老项目并定位常见问题",
+  },
+  {
+    badge: "L5",
+    title: "高级开发",
+    desc: "从实现需求升级到架构、性能、稳定性与发布治理。",
+    path: "/advanced",
+    outcome: "学完后具备中高级 iOS 工程能力",
+  },
+];
+
+const focusAreas = [
+  {
+    icon: <BookOpen className="h-5 w-5 text-ios-blue" />,
+    title: "成长地图优先",
+    desc: "不是直接扔给你一堆语法点，而是先告诉你学习顺序和阶段目标。",
+  },
+  {
+    icon: <Hammer className="h-5 w-5 text-ios-green" />,
+    title: "先能做业务",
+    desc: "UIKit、导航、列表、网络请求这些能直接落地到工作里的内容优先。",
+  },
+  {
+    icon: <Layers3 className="h-5 w-5 text-ios-orange" />,
+    title: "兼顾现代与历史",
+    desc: "Swift 和 SwiftUI 负责未来，Objective-C 和 UIKit 负责现实维护。",
+  },
+  {
+    icon: <Wrench className="h-5 w-5 text-red-500" />,
+    title: "对准老项目维护",
+    desc: "OC、Delegate、KVO、ARC 不是选修，而是维护老项目的刚需能力。",
+  },
+];
 
 export default function Home() {
-  const features = [
-    {
-      icon: <Apple className="h-6 w-6 text-ios-blue" />,
-      title: "Objective-C 语法教程",
-      desc: "从消息传递到内存管理，对比 JavaScript 深入理解 OC 的独特设计与运行机制。",
-      link: "/objc",
-    },
-    {
-      icon: <Code2 className="h-6 w-6 text-ios-orange" />,
-      title: "Swift 语法教程",
-      desc: "类型安全、可选型、协议、泛型... 掌握这门现代且优雅的苹果官方主力语言。",
-      link: "/swift",
-    },
-    {
-      icon: <Hammer className="h-6 w-6 text-ios-green" />,
-      title: "Xcode 使用教程",
-      desc: "从 VS Code 无缝切换到 Xcode，熟悉模拟器、断点调试与 Storyboard 界面搭建。",
-      link: "/xcode",
-    },
-    {
-      icon: <BookOpen className="h-6 w-6 text-purple-500" />,
-      title: "实战案例驱动",
-      desc: "Todo 列表、网络请求、无限滚动，从零到一构建完整的 iOS 原生应用。",
-      link: "/practice",
-    },
-  ];
-
   return (
     <div className="flex flex-col items-center">
-      {/* Hero Section */}
-      <section className="w-full max-w-5xl px-4 py-20 md:py-32 text-center">
-        <h1 className="mb-6 text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-7xl">
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-ios-blue to-purple-600 mb-2">
-            iOS 学习指南
-          </span>
-          为前端开发者打造
-        </h1>
+      <section className="w-full max-w-6xl px-4 py-16 md:py-24">
+        <div className="rounded-[2rem] border border-gray-200 bg-gradient-to-br from-slate-50 via-white to-blue-50 px-6 py-12 shadow-sm dark:border-gray-800 dark:from-gray-900 dark:via-gray-900 dark:to-slate-900 md:px-10">
+          <div className="max-w-4xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-ios-blue">
+              Front-End To iOS Roadmap
+            </p>
+            <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-6xl">
+              从前端视角学习 iOS，
+              <br />
+              目标不是入门，而是能维护、能进阶、能走到高级开发。
+            </h1>
+            <p className="max-w-3xl text-lg leading-8 text-gray-600 dark:text-gray-300">
+              这个项目现在被重构成一条阶段化成长路线：先完成认知迁移，再掌握
+              Xcode 和 UIKit 基础，然后进入 Swift / SwiftUI，最后补齐
+              Objective-C 老项目维护与工程化能力。
+            </p>
 
-        <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-600 dark:text-gray-300 md:text-xl leading-relaxed">
-          不用从零开始重新学编程。我们为你建立了 JavaScript/TypeScript 与
-          Objective-C/Swift 之间的心智映射，利用你已有的前端知识，十倍加速 iOS
-          开发学习。
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            to="/guide/before-start"
-            className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-ios-blue px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-blue-600 hover:shadow-lg hover:-translate-y-0.5"
-          >
-            开始学习
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            to="/swift"
-            className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gray-100 dark:bg-gray-800 px-8 py-3.5 text-sm font-semibold text-gray-900 dark:text-white transition-all hover:bg-gray-200 dark:hover:bg-gray-700"
-          >
-            Swift 教程
-          </Link>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Link
+                to="/roadmap"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-ios-blue px-8 py-3.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-blue-600 hover:shadow-lg"
+              >
+                先看成长地图
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                to="/objc-maintenance"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gray-900 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+              >
+                直接看 OC 维护路线
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="w-full max-w-6xl px-4 py-16 bg-gray-50/50 dark:bg-gray-800/20 rounded-3xl mb-20">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, idx) => (
-            <Link
-              key={idx}
-              to={feature.link}
-              className="group flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm transition-all hover:shadow-md hover:border-ios-blue/50 dark:hover:border-ios-blue/50"
+      <section className="w-full max-w-6xl px-4 pb-10">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {focusAreas.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900"
             >
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 group-hover:scale-110 transition-transform">
-                {feature.icon}
+              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800">
+                {item.icon}
               </div>
-              <h3 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                {feature.desc}
+              <h2 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">
+                {item.title}
+              </h2>
+              <p className="text-sm leading-7 text-gray-600 dark:text-gray-400">
+                {item.desc}
               </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="w-full max-w-6xl px-4 pb-20">
+        <div className="mb-10 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ios-blue">
+              Stage Map
+            </p>
+            <h2 className="mt-2 text-3xl font-bold text-gray-900 dark:text-white">
+              分阶段学习，而不是按目录硬啃
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid gap-5 lg:grid-cols-5">
+          {stages.map((stage) => (
+            <Link
+              key={stage.title}
+              to={stage.path}
+              className="group flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-ios-blue/40 hover:shadow-md dark:border-gray-800 dark:bg-gray-900 dark:hover:border-ios-blue/40"
+            >
+              <div className="mb-5 flex items-center justify-between">
+                <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-bold tracking-[0.18em] text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                  {stage.badge}
+                </span>
+                <ArrowRight className="h-4 w-4 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:text-ios-blue" />
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">
+                {stage.title}
+              </h3>
+              <p className="mb-5 text-sm leading-7 text-gray-600 dark:text-gray-400">
+                {stage.desc}
+              </p>
+              <div className="mt-auto rounded-2xl bg-gray-50 px-4 py-4 text-sm font-medium leading-7 text-gray-700 dark:bg-gray-800/70 dark:text-gray-300">
+                {stage.outcome}
+              </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Roadmap Section */}
-      <section className="w-full max-w-4xl px-4 pb-24 text-center">
-        <h2 className="text-3xl font-bold mb-12 text-gray-900 dark:text-white">
-          学习路线
-        </h2>
-
-        <div className="relative">
-          {/* Connecting Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800 -translate-x-1/2 z-0 hidden md:block"></div>
-
-          <div className="space-y-12 relative z-10">
-            {/* Step 1 */}
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-              <div className="md:w-1/2 flex md:justify-end">
-                <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm md:text-right w-full md:w-5/6">
-                  <h3 className="text-xl font-bold mb-2">1. 语言基础</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    先了解 Objective-C 或 Swift 的基本语法，对比 JS/TS
-                    建立类型系统和面向对象概念。
-                  </p>
-                </div>
-              </div>
-              <div className="w-12 h-12 rounded-full bg-ios-blue text-white flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white dark:border-gray-900 z-10 shrink-0">
-                1
-              </div>
-              <div className="md:w-1/2"></div>
+      <section className="w-full max-w-6xl px-4 pb-24">
+        <div className="rounded-[2rem] border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 dark:bg-gray-900 md:p-10">
+          <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+                当前站点的新入口
+              </h2>
+              <p className="mt-3 text-base leading-8 text-gray-600 dark:text-gray-400">
+                第一轮调整先把站点的导航语义改对。旧文章还保留，但顶部导航和首页已经切换成阶段型入口，后面会继续补 UIKit、OC 维护和高级进阶缺失内容。
+              </p>
             </div>
 
-            {/* Step 2 */}
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 flex-col-reverse md:flex-row">
-              <div className="md:w-1/2"></div>
-              <div className="w-12 h-12 rounded-full bg-ios-green text-white flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white dark:border-gray-900 z-10 shrink-0">
-                2
-              </div>
-              <div className="md:w-1/2 flex md:justify-start">
-                <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm text-left w-full md:w-5/6">
-                  <h3 className="text-xl font-bold mb-2">2. 开发环境</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    熟悉 Xcode IDE
-                    的使用，掌握断点调试、模拟器运行和基础的项目配置。
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Step 3 */}
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-              <div className="md:w-1/2 flex md:justify-end">
-                <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm md:text-right w-full md:w-5/6">
-                  <h3 className="text-xl font-bold mb-2">3. UI 框架</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    学习 UIKit 或
-                    SwiftUI，理解视图层级、生命周期、布局系统与事件响应。
-                  </p>
-                </div>
-              </div>
-              <div className="w-12 h-12 rounded-full bg-ios-orange text-white flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white dark:border-gray-900 z-10 shrink-0">
-                3
-              </div>
-              <div className="md:w-1/2"></div>
-            </div>
-
-            {/* Step 4 */}
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 flex-col-reverse md:flex-row">
-              <div className="md:w-1/2"></div>
-              <div className="w-12 h-12 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white dark:border-gray-900 z-10 shrink-0">
-                4
-              </div>
-              <div className="md:w-1/2 flex md:justify-start">
-                <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm text-left w-full md:w-5/6">
-                  <h3 className="text-xl font-bold mb-2">4. 实战开发</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    通过 Todo
-                    List、网络请求等实战案例，串联知识点，构建完整的原生应用。
-                  </p>
-                </div>
-              </div>
+            <div className="grid gap-3 sm:grid-cols-2 md:w-[28rem]">
+              {nav.map((item) => (
+                <Link
+                  key={item.link}
+                  to={item.link}
+                  className="rounded-2xl border border-gray-200 px-4 py-4 transition-colors hover:border-ios-blue hover:bg-blue-50/60 dark:border-gray-800 dark:hover:border-ios-blue dark:hover:bg-gray-800"
+                >
+                  <div className="font-semibold text-gray-900 dark:text-white">
+                    {item.text}
+                  </div>
+                  <div className="mt-1 text-sm leading-6 text-gray-500 dark:text-gray-400">
+                    {item.summary}
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

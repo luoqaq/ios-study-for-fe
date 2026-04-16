@@ -107,16 +107,16 @@ Banana
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/xcode/simulator"
+          to="/starter/simulator"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
           ← 模拟器
         </Link>
         <Link
-          to="/xcode/storyboard"
+          to="/starter/debugging-advanced"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
-          下一篇：Storyboard →
+          下一篇：调试与 Instruments 实战 →
         </Link>
       </div>
     </div>

@@ -46,7 +46,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
           ))}
           <div className="h-5 w-px bg-gray-200 dark:bg-gray-700 mx-2"></div>
           <a
-            href="https://github.com"
+            href="https://github.com/luoqaq/ios-study-for-fe"
             target="_blank"
             rel="noreferrer"
             className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"

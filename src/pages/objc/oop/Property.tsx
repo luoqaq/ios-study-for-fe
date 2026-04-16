@@ -127,13 +127,13 @@ class Person {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/objc/oop/category"
+          to="/objc-maintenance/oop/category"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
           ← 分类 Category
         </Link>
         <Link
-          to="/objc/memory/arc"
+          to="/objc-maintenance/memory/arc"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
           下一篇：ARC 内存机制 →

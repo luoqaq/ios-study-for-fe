@@ -45,7 +45,7 @@ export default function TodoApp() {
         <TipBox type="tip" title="选择你的流派">
           以下展示了使用 UIKit (Objective-C 和 Swift)
           的经典实现方式。如果你对声明式 UI 更感兴趣，可以跳到{" "}
-          <Link to="/practice/mini-swiftui/intro">SwiftUI 小项目</Link>。
+          <Link to="/swift/practice/mini-swiftui">SwiftUI 小项目</Link>。
         </TipBox>
 
         <h3>1. 数据源与代理协议</h3>
@@ -130,8 +130,23 @@ export default function TodoApp() {
         <p>
           你可以在 Xcode
           中新建一个项目，尝试将上面的代码补全。接下来，我们将挑战更加复杂的场景：
-          <Link to="/practice/network-app/intro">网络请求与 JSON 解析</Link>。
+          <Link to="/advanced/practice/network-app">网络请求与 JSON 解析</Link>。
         </p>
+      </div>
+
+      <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
+        <Link
+          to="/uikit/auto-layout"
+          className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+        >
+          ← Auto Layout
+        </Link>
+        <Link
+          to="/uikit/practice/tableview-app"
+          className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
+        >
+          下一篇：列表复用与滚动 →
+        </Link>
       </div>
     </div>
   );

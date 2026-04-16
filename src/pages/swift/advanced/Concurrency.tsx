@@ -175,16 +175,16 @@ function Profile() {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/swift/advanced/closure"
+          to="/swift/advanced/closure-memory"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← 闭包 Closure
+          ← 闭包捕获与内存管理
         </Link>
         <Link
-          to="/swift/advanced/error-handling"
+          to="/swift/advanced/concurrency-practical"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
-          下一篇：错误处理 →
+          下一篇：并发与数据竞争排查 →
         </Link>
       </div>
     </div>

@@ -92,13 +92,13 @@ export default function Project() {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/xcode/interface"
+          to="/starter/interface"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
           ← 界面导览
         </Link>
         <Link
-          to="/xcode/simulator"
+          to="/starter/simulator"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
           下一篇：模拟器使用 →

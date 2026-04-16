@@ -159,10 +159,10 @@ function ParentView() {
           ← SwiftUI 简介
         </Link>
         <Link
-          to="/xcode"
+          to="/swift/swiftui/navigation"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
-          进入 Xcode 教程 →
+          下一篇：SwiftUI 路由 →
         </Link>
       </div>
     </div>

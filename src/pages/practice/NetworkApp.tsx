@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CodeCompare from "@/components/CodeCompare";
 import TipBox from "@/components/TipBox";
 
@@ -145,6 +146,21 @@ interface User {
           证书校验等。iOS 常用的第三方网络库是 <code>Alamofire</code>
           （类似前端的 axios）。
         </p>
+      </div>
+
+      <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
+        <Link
+          to="/advanced/publish-end-to-end"
+          className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+        >
+          ← 从零发布一个 App
+        </Link>
+        <Link
+          to="/advanced"
+          className="flex items-center gap-2 font-medium text-ios-blue hover:underline"
+        >
+          返回高级进阶总览 →
+        </Link>
       </div>
     </div>
   );

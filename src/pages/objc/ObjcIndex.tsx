@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function ObjcIndex() {
   return (
     <div className="space-y-8">
-      <h1 className="text-4xl font-bold tracking-tight">Objective-C</h1>
+      <h1 className="text-4xl font-bold tracking-tight">Objective-C 与老项目维护</h1>
       <p className="text-xl text-gray-600 dark:text-gray-400">
         iOS 的基石语言。
       </p>
@@ -35,37 +35,36 @@ export default function ObjcIndex() {
         </ul>
 
         <h2>学习路径</h2>
-        <p>本模块分为四个部分，将带你快速从 JS 的心智模型过渡到 OC：</p>
+        <p>本模块分为四个部分，将带你快速从 JS 的心智模型过渡到 OC，并且对准真实的 UIKit 历史项目维护场景：</p>
 
         <ol>
           <li>
-            <Link to="/objc/basics/intro">基础语法</Link>
+            <Link to="/objc-maintenance/basics/intro">基础语法</Link>
             ：熟悉基本数据类型、字符串操作和控制流。
           </li>
           <li>
-            <Link to="/objc/oop/class-object">面向对象</Link>：掌握 `.h/.m`
+            <Link to="/objc-maintenance/oop/class-object">面向对象</Link>：掌握 `.h/.m`
             文件分离、类与协议。
           </li>
           <li>
-            <Link to="/objc/memory/arc">内存管理</Link>：理解 ARC
+            <Link to="/objc-maintenance/memory/arc">内存管理</Link>：理解 ARC
             机制，避免循环引用。
           </li>
           <li>
-            <Link to="/objc/advanced/kvo">高级特性</Link>：学习 KVO、Delegate 和
-            Notification 模式。
+            <Link to="/objc-maintenance/advanced/kvc">老项目关键模式</Link>：学习 KVC、KVO、Delegate、Notification、GCD 和混编。
           </li>
         </ol>
       </div>
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/guide/before-start"
+          to="/roadmap/before-start"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
           ← 开始之前
         </Link>
         <Link
-          to="/objc/basics/intro"
+          to="/objc-maintenance/basics/intro"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
           开始基础语法 →

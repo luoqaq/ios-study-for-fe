@@ -179,16 +179,16 @@ class Settings {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/objc/advanced/delegate"
+          to="/objc-maintenance/advanced/delegate"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
           ← Delegate 委托
         </Link>
         <Link
-          to="/swift"
+          to="/objc-maintenance/advanced/gcd"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
-          进入 Swift 教程 →
+          下一篇：GCD →
         </Link>
       </div>
     </div>

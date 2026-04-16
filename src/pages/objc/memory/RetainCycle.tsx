@@ -169,16 +169,16 @@ useEffect(() => {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/objc/memory/arc"
+          to="/objc-maintenance/memory/arc"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
           ← ARC 机制
         </Link>
         <Link
-          to="/objc/advanced/kvo"
+          to="/objc-maintenance/practice/memory-debug"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
-          下一篇：高级特性 KVO →
+          下一篇：内存泄漏实战排查 →
         </Link>
       </div>
     </div>

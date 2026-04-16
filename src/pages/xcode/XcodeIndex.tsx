@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function XcodeIndex() {
   return (
     <div className="space-y-8">
-      <h1 className="text-4xl font-bold tracking-tight">Xcode 使用教程</h1>
+      <h1 className="text-4xl font-bold tracking-tight">开发起步</h1>
       <p className="text-xl text-gray-600 dark:text-gray-400">
         抛弃 VS Code 的轻量级，迎接庞大但全能的 Apple 官方 IDE。
       </p>
@@ -46,31 +46,31 @@ export default function XcodeIndex() {
         </ul>
 
         <h2>学习路径</h2>
-        <p>我们将按实际开发流程来熟悉 Xcode：</p>
+        <p>这一模块现在作为“开发起步”存在，我们将按实际开发流程来熟悉 Xcode：</p>
 
         <ol>
           <li>
-            <Link to="/xcode/setup">环境安装与配置</Link>：下载 Xcode
+            <Link to="/starter/setup">环境安装与配置</Link>：下载 Xcode
             并配置开发者证书。
           </li>
           <li>
-            <Link to="/xcode/interface">界面导览</Link>：认识 Xcode
+            <Link to="/starter/interface">界面导览</Link>：认识 Xcode
             复杂的面板分布。
           </li>
           <li>
-            <Link to="/xcode/project">创建项目</Link>
+            <Link to="/starter/project">创建项目</Link>
             ：从新建一个工程开始，理解目录结构。
           </li>
           <li>
-            <Link to="/xcode/simulator">运行与模拟器</Link>：第一次把你的 App
+            <Link to="/starter/simulator">运行与模拟器</Link>：第一次把你的 App
             跑起来。
           </li>
           <li>
-            <Link to="/xcode/debugging">断点与调试</Link>
+            <Link to="/starter/debugging">断点与调试</Link>
             ：像在浏览器打断点一样在 Xcode 中排查 Bug。
           </li>
           <li>
-            <Link to="/xcode/storyboard">可视化 UI (Storyboard)</Link>
+            <Link to="/starter/storyboard">可视化 UI (Storyboard)</Link>
             ：了解经典的可视化搭建方式。
           </li>
         </ol>
@@ -78,13 +78,13 @@ export default function XcodeIndex() {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/swift"
+          to="/roadmap"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← Swift 教程
+          ← 成长地图
         </Link>
         <Link
-          to="/xcode/setup"
+          to="/starter/setup"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
           安装与配置 Xcode →

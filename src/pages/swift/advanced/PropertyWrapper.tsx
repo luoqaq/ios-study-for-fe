@@ -102,16 +102,16 @@ console.log(user.name); // 打印: ALICE WONDER`}
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/swift/advanced/error-handling"
+          to="/swift/advanced/error-handling-deep"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← 错误处理
+          ← 错误处理与 Result 深入
         </Link>
         <Link
-          to="/swift/swiftui/intro"
+          to="/swift/advanced/combine"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
-          下一篇：SwiftUI 简介 →
+          下一篇：Combine 响应式编程 →
         </Link>
       </div>
     </div>

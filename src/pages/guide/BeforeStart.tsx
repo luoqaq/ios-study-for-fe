@@ -99,22 +99,22 @@ export default function BeforeStart() {
         <ol>
           <li>一台 Mac 电脑（必备）。</li>
           <li>
-            在 Mac App Store 下载安装最新版的 <Link to="/xcode">Xcode</Link>。
+            在 Mac App Store 下载安装最新版的 <Link to="/starter">Xcode</Link>。
           </li>
           <li>注册一个 Apple ID（免费即可在模拟器或真机上调试）。</li>
         </ol>
 
         <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
-          <Link
-            to="/guide"
-            className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-          >
-            ← 学习路线
-          </Link>
-          <Link
-            to="/objc"
-            className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
-          >
+        <Link
+          to="/roadmap"
+          className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+        >
+          ← 学习路线
+        </Link>
+        <Link
+          to="/objc-maintenance"
+          className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
+        >
             开始 Objective-C 教程 →
           </Link>
         </div>

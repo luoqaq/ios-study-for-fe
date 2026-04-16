@@ -166,10 +166,10 @@ const words = ["Hello", "World"];
           ← 协议 Protocol
         </Link>
         <Link
-          to="/swift/oop/generics"
+          to="/swift/oop/properties-deep"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
-          下一篇：泛型 Generics →
+          下一篇：属性与存储深入 →
         </Link>
       </div>
     </div>

@@ -72,7 +72,7 @@ export default function SwiftIndex() {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/guide/before-start"
+          to="/roadmap/before-start"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
           ← 开始之前

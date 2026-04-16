@@ -219,10 +219,10 @@ if (err) {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/swift/oop/class-struct"
+          to="/swift/oop/value-reference-deep"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← 类与结构体
+          ← 值类型与引用类型深入
         </Link>
         <Link
           to="/swift/oop/protocol"

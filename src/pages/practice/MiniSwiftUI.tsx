@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CodeCompare from "@/components/CodeCompare";
 import TipBox from "@/components/TipBox";
 
@@ -168,6 +169,21 @@ export default function Counter() {
           App 界面。但是，遇到历史包袱或者极端复杂的定制需求时，你仍然需要回到
           UIKit，这就是为什么我们要在前面的章节打牢基础。
         </p>
+      </div>
+
+      <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
+        <Link
+          to="/swift/swiftdata/intro"
+          className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+        >
+          ← SwiftData 入门
+        </Link>
+        <Link
+          to="/swift"
+          className="flex items-center gap-2 font-medium text-ios-blue hover:underline"
+        >
+          返回 Swift 总览 →
+        </Link>
       </div>
     </div>
   );

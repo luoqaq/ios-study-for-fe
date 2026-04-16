@@ -169,16 +169,16 @@ function findIndex<T extends Equatable>(valueToFind: T, array: T[]): number | nu
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/swift/oop/extension"
+          to="/swift/oop/properties-deep"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← 扩展 Extension
+          ← 属性与存储深入
         </Link>
         <Link
-          to="/swift/advanced/closure"
+          to="/swift/oop/generics-advanced"
           className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
         >
-          下一篇：闭包 Closure →
+          下一篇：泛型与协议导向编程 →
         </Link>
       </div>
     </div>

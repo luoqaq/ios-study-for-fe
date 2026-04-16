@@ -39,7 +39,7 @@ export default function PracticeIndex() {
         <ol>
           <li>
             <strong>
-              <Link to="/practice/todo-app/intro">Todo App</Link>（基础 UI
+              <Link to="/uikit/practice/todo-app">Todo App</Link>（基础 UI
               与数据增删改查）：
             </strong>
             <br />
@@ -48,7 +48,7 @@ export default function PracticeIndex() {
           </li>
           <li>
             <strong>
-              <Link to="/practice/network-app/intro">网络请求与 JSON 解析</Link>
+              <Link to="/advanced/practice/network-app">网络请求与 JSON 解析</Link>
               （类比 fetch/axios）：
             </strong>
             <br />
@@ -57,7 +57,7 @@ export default function PracticeIndex() {
           </li>
           <li>
             <strong>
-              <Link to="/practice/tableview-app/intro">无限滚动列表</Link>
+              <Link to="/uikit/practice/tableview-app">无限滚动列表</Link>
               （核心：UITableView）：
             </strong>
             <br />
@@ -66,7 +66,7 @@ export default function PracticeIndex() {
           </li>
           <li>
             <strong>
-              <Link to="/practice/mini-swiftui/intro">SwiftUI 声明式体验</Link>
+              <Link to="/swift/practice/mini-swiftui">SwiftUI 声明式体验</Link>
               （React/Vue 既视感）：
             </strong>
             <br />
@@ -79,13 +79,13 @@ export default function PracticeIndex() {
 
         <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
           <Link
-            to="/xcode"
+            to="/starter"
             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
           >
-            ← Xcode 使用教程
+            ← 开发起步
           </Link>
           <Link
-            to="/practice/todo-app/intro"
+            to="/uikit/practice/todo-app"
             className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
           >
             开始 Todo App 实战 →

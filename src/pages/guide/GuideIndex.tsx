@@ -29,11 +29,11 @@ export default function GuideIndex() {
         <h3>1. 了解基础与环境</h3>
         <ul>
           <li>
-            阅读 <Link to="/guide/before-start">开始之前</Link>
+            阅读 <Link to="/roadmap/before-start">开始之前</Link>
             ，建立正确的心智模型。
           </li>
           <li>
-            浏览 <Link to="/xcode">Xcode 使用教程</Link>，熟悉开发工具。
+            浏览 <Link to="/starter">开发起步</Link>，熟悉开发工具。
           </li>
         </ul>
 
@@ -42,7 +42,7 @@ export default function GuideIndex() {
         <ul>
           <li>
             <strong>如果你维护老项目：</strong> 必须学习{" "}
-            <Link to="/objc">Objective-C</Link>，它是支撑大量国民级应用的基础。
+            <Link to="/objc-maintenance">Objective-C</Link>，它是支撑大量国民级应用的基础。
           </li>
           <li>
             <strong>如果你开发新项目：</strong> 强烈推荐学习{" "}
@@ -53,7 +53,7 @@ export default function GuideIndex() {
 
         <h3>3. 动手实践</h3>
         <p>
-          不要只看不练。进入 <Link to="/practice">实战案例</Link> 模块，从 Todo
+          不要只看不练。进入 <Link to="/uikit">UIKit</Link> 模块，从 Todo
           App 开始， 亲手敲入每一行代码，体会 iOS
           的委托模式（Delegate）和视图控制器（ViewController）是怎么工作的。
         </p>
@@ -61,7 +61,7 @@ export default function GuideIndex() {
         <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
           <div></div>
           <Link
-            to="/guide/before-start"
+            to="/roadmap/before-start"
             className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
           >
             下一篇：开始之前 →
