@@ -59,6 +59,7 @@ export const sidebar: SidebarConfig = {
       items: [
         { text: "学习路线", link: "/roadmap" },
         { text: "开始之前", link: "/roadmap/before-start" },
+        { text: "学习路径详解", link: "/roadmap/learning-path" },
       ],
     },
   ],
@@ -95,9 +96,12 @@ export const sidebar: SidebarConfig = {
         { text: "表单与输入", link: "/uikit/form-input" },
         { text: "复杂列表布局", link: "/uikit/compositional-layout" },
         { text: "键盘与表单校验", link: "/uikit/form-validation" },
+        { text: "手势与触摸事件", link: "/uikit/gestures" },
         { text: "表单实战案例", link: "/uikit/practice/form-app" },
         { text: "动画与转场", link: "/uikit/animation" },
+        { text: "动画实战案例", link: "/uikit/practice/animation-app" },
         { text: "TableView 性能优化", link: "/uikit/tableview-optimization" },
+        { text: "CollectionView 电商首页", link: "/uikit/practice/collection-view-app" },
         { text: "Todo App", link: "/uikit/practice/todo-app" },
         { text: "列表复用与滚动", link: "/uikit/practice/tableview-app" },
       ],
@@ -127,6 +131,7 @@ export const sidebar: SidebarConfig = {
         { text: "属性与存储深入", link: "/swift/oop/properties-deep" },
         { text: "泛型 Generics", link: "/swift/oop/generics" },
         { text: "泛型与协议导向编程", link: "/swift/oop/generics-advanced" },
+        { text: "实战：Swift POP 网络层", link: "/swift/practice/protocol-app" },
         { text: "闭包 Closure", link: "/swift/advanced/closure" },
         { text: "闭包捕获与内存管理", link: "/swift/advanced/closure-memory" },
         { text: "并发 async/await", link: "/swift/advanced/concurrency" },
@@ -146,6 +151,7 @@ export const sidebar: SidebarConfig = {
         { text: "SwiftUI 与 UIKit 混用", link: "/swift/swiftui/mixed-ui" },
         { text: "数据流与状态管理深入", link: "/swift/swiftui/data-flow" },
         { text: "SwiftData 入门", link: "/swift/swiftdata/intro" },
+        { text: "实战：SwiftData 待办清单", link: "/swift/practice/swiftdata-app" },
         { text: "Mini SwiftUI 实战", link: "/swift/practice/mini-swiftui" },
       ],
     },
@@ -174,6 +180,7 @@ export const sidebar: SidebarConfig = {
         { text: "ARC 机制", link: "/objc-maintenance/memory/arc" },
         { text: "循环引用", link: "/objc-maintenance/memory/retain-cycle" },
         { text: "内存泄漏实战排查", link: "/objc-maintenance/practice/memory-debug" },
+        { text: "实战：Delegate 模式", link: "/objc-maintenance/practice/delegate-pattern-app" },
       ],
     },
     {
@@ -228,6 +235,7 @@ export const sidebar: SidebarConfig = {
         { text: "iOS 18 适配要点", link: "/advanced/ios18-adaptation" },
         { text: "从零发布一个 App", link: "/advanced/publish-end-to-end" },
         { text: "网络请求实战", link: "/advanced/practice/network-app" },
+        { text: "实战：性能排查检查清单", link: "/advanced/practice/performance-app" },
       ],
     },
   ],
@@ -270,7 +278,8 @@ export function getSidebarKey(pathname: string) {
 
   if (
     pathname.startsWith("/advanced") ||
-    pathname.startsWith("/practice/network-app")
+    pathname.startsWith("/practice/network-app") ||
+    pathname.startsWith("/practice/performance-app")
   ) {
     return "/advanced";
   }

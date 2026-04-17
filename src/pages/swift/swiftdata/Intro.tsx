@@ -94,10 +94,10 @@ model User {
           ← 数据流与状态管理深入
         </Link>
         <Link
-          to="/swift/practice/mini-swiftui"
+          to="/swift/practice/swiftdata-app"
           className="flex items-center gap-2 font-medium text-ios-blue hover:underline"
         >
-          实战：Mini SwiftUI →
+          实战：SwiftData 待办清单 →
         </Link>
       </div>
     </div>

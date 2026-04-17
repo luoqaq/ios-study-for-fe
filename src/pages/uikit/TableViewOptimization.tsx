@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import CodeCompare from "@/components/CodeCompare";
 import TipBox from "@/components/TipBox";
 
 export default function TableViewOptimization() {
@@ -24,6 +25,33 @@ export default function TableViewOptimization() {
           同时确保 Cell 被滑出屏幕时能正确释放或暂停耗时任务（视频、GIF、定时器）。
         </p>
 
+        <CodeCompare
+          title="正确的 Cell 复用"
+          leftLang="swift"
+          rightLang="typescript"
+          leftCode={`func tableView(
+    _ tableView: UITableView, 
+    cellForRowAt indexPath: IndexPath
+) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(
+        withIdentifier: "cell", 
+        for: indexPath
+    ) as! MyCell
+    cell.configure(with: data[indexPath.row])
+    return cell
+}`}
+          rightCode={`// React 中通过 key 和虚拟 DOM 复用
+function List({ items }) {
+    return (
+        <div>
+            {items.map(item => (
+                <Row key={item.id} data={item} />
+            ))}
+        </div>
+    );
+}`}
+        />
+
         <h2>2. 高度计算要轻量</h2>
         <p>
           如果实现了 <code>tableView(_:heightForRowAt:)</code>，
@@ -35,6 +63,18 @@ export default function TableViewOptimization() {
           <li>动态高度提前缓存计算结果，不要每次重新算</li>
           <li>iOS 11+ 可以开启 Self-Sizing，让 Auto Layout 自动推导</li>
         </ul>
+
+        <pre><code className="language-swift">{`// 缓存高度示例
+var heightCache: [IndexPath: CGFloat] = [:]
+
+func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    if let height = heightCache[indexPath] {
+        return height
+    }
+    let height = calculateHeight(for: data[indexPath.row])
+    heightCache[indexPath] = height
+    return height
+}`}</code></pre>
 
         <h2>3. 减少主线程阻塞</h2>
         <p>
@@ -61,6 +101,33 @@ export default function TableViewOptimization() {
           <li>Cell 滑出屏幕时取消未完成的下载/解码任务</li>
         </ul>
 
+        <CodeCompare
+          title="后台图片解码"
+          leftLang="swift"
+          rightLang="typescript"
+          leftCode={`DispatchQueue.global(qos: .userInitiated).async {
+    guard let image = UIImage(contentsOfFile: path),
+          let cgImage = image.cgImage else { return }
+    
+    // 解码并裁剪到目标尺寸
+    let size = CGSize(width: 100, height: 100)
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
+    image.draw(in: CGRect(origin: .zero, size: size))
+    let decodedImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    DispatchQueue.main.async {
+        cell.imageView.image = decodedImage
+    }
+}`}
+          rightCode={`// 前端通常交给浏览器或 img 标签自动处理
+<img 
+  src={imageUrl} 
+  loading="lazy"
+  style={{ width: 100, height: 100, objectFit: 'cover' }}
+/>`}
+        />
+
         <h2>5. 增量刷新优于全量 reload</h2>
         <p>
           <code>reloadData()</code> 会重置整个列表状态，代价最高。
@@ -72,20 +139,38 @@ export default function TableViewOptimization() {
           <li><code>deleteRows(at:with:)</code></li>
           <li>iOS 13+ 的 <code>UITableViewDiffableDataSource</code></li>
         </ul>
+
+        <h2>6. 预加载（Prefetching）</h2>
+        <p>
+          实现 <code>UITableViewDataSourcePrefetching</code> 可以在 Cell 即将进入屏幕前提前请求数据，
+          避免用户滑到空白区域时等待加载。
+        </p>
+
+        <pre><code className="language-swift">{`extension ViewController: UITableViewDataSourcePrefetching {
+    func tableView(
+        _ tableView: UITableView, 
+        prefetchRowsAt indexPaths: [IndexPath]
+    ) {
+        for indexPath in indexPaths {
+            let url = data[indexPath.row].imageUrl
+            ImagePrefetcher.shared.prefetch(url: url)
+        }
+    }
+}`}</code></pre>
       </div>
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/uikit/practice/todo-app"
+          to="/uikit/practice/animation-app"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← Todo App
+          ← 动画实战案例
         </Link>
         <Link
-          to="/uikit/practice/tableview-app"
+          to="/uikit/practice/collection-view-app"
           className="flex items-center gap-2 font-medium text-ios-blue hover:underline"
         >
-          实战：列表复用与滚动 →
+          实战：CollectionView 电商首页 →
         </Link>
       </div>
     </div>

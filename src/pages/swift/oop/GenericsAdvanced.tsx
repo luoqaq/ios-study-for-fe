@@ -114,10 +114,10 @@ abstract class Greetable {
           ← 泛型基础
         </Link>
         <Link
-          to="/swift/advanced/closure"
+          to="/swift/practice/protocol-app"
           className="flex items-center gap-2 font-medium text-ios-blue hover:underline"
         >
-          下一篇：闭包 Closure →
+          实战：Swift POP 网络层 →
         </Link>
       </div>
     </div>

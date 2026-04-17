@@ -11,7 +11,7 @@ export default function PracticeIndex() {
       <div className="prose prose-blue max-w-none dark:prose-invert">
         <h2>不要光看不练！</h2>
         <p>
-          前端同学最容易犯的错误就是像看小说一样刷完了语法教程，认为自己“懂了”，但在新建
+          前端同学最容易犯的错误就是像看小说一样刷完了语法教程，认为自己"懂了"，但在新建
           Xcode 工程时，面对空荡荡的文件，脑子里一片空白。
         </p>
 
@@ -33,64 +33,74 @@ export default function PracticeIndex() {
           </li>
         </ul>
 
-        <h2>案例列表</h2>
-        <p>我们精选了以下几个典型的移动端开发场景：</p>
+        <h2>UIKit 实战</h2>
+        <ul>
+          <li>
+            <Link to="/uikit/practice/form-app">表单实战案例</Link>：
+            注册/登录页面的完整表单流程，包含键盘避让和输入校验
+          </li>
+          <li>
+            <Link to="/uikit/practice/animation-app">动画实战案例</Link>：
+            点赞动效、Cell 展开、Skeleton 骨架屏与自定义转场
+          </li>
+          <li>
+            <Link to="/uikit/practice/collection-view-app">CollectionView 电商首页</Link>：
+            用 Compositional Layout 搭建 Banner + 分类 + 商品瀑布流
+          </li>
+          <li>
+            <Link to="/uikit/practice/todo-app">Todo App</Link>：
+            基础 UI 与数据增删改查，所有框架的"Hello World"
+          </li>
+          <li>
+            <Link to="/uikit/practice/tableview-app">无限滚动列表</Link>：
+            UITableView 的核心能力，成百上千条数据的复用机制
+          </li>
+        </ul>
 
-        <ol>
+        <h2>Swift 实战</h2>
+        <ul>
           <li>
-            <strong>
-              <Link to="/uikit/practice/todo-app">Todo App</Link>（基础 UI
-              与数据增删改查）：
-            </strong>
-            <br />
-            这是所有框架的“Hello
-            World”。学习如何在原生环境处理按钮点击、文本输入、简单列表的刷新。
+            <Link to="/swift/practice/protocol-app">Swift POP 网络层实战</Link>：
+            用面向协议编程搭建可测试、可替换的网络请求层
           </li>
           <li>
-            <strong>
-              <Link to="/advanced/practice/network-app">网络请求与 JSON 解析</Link>
-              （类比 fetch/axios）：
-            </strong>
-            <br />
-            没有一个 App 可以脱离网络。学习原生 <code>URLSession</code>
-            、异步回调、以及 Swift 的 <code>async/await</code> 网络请求模型。
+            <Link to="/swift/practice/mini-swiftui">SwiftUI 声明式体验</Link>：
+            感受从状态驱动视图的丝滑开发体验
           </li>
-          <li>
-            <strong>
-              <Link to="/uikit/practice/tableview-app">无限滚动列表</Link>
-              （核心：UITableView）：
-            </strong>
-            <br />
-            iOS
-            开发中最核心的控件！学习原生如何优雅地实现成百上千条数据的“虚拟滚动”（重用机制）。
-          </li>
-          <li>
-            <strong>
-              <Link to="/swift/practice/mini-swiftui">SwiftUI 声明式体验</Link>
-              （React/Vue 既视感）：
-            </strong>
-            <br />
-            体验苹果未来的 UI
-            框架，感受从状态（State）驱动视图（View）的丝滑开发体验。
-          </li>
-        </ol>
+        </ul>
 
-        <p>准备好了吗？打开你的 Xcode，让我们开始第一个项目。</p>
+        <h2>Objective-C 实战</h2>
+        <ul>
+          <li>
+            <Link to="/objc-maintenance/practice/memory-debug">内存泄漏实战排查</Link>：
+            常见泄漏场景、Instruments 定位与修复策略
+          </li>
+        </ul>
 
-        <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
-          <Link
-            to="/starter"
-            className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-          >
-            ← 开发起步
-          </Link>
-          <Link
-            to="/uikit/practice/todo-app"
-            className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
-          >
-            开始 Todo App 实战 →
-          </Link>
-        </div>
+        <h2>高级进阶实战</h2>
+        <ul>
+          <li>
+            <Link to="/advanced/practice/network-app">网络请求与 JSON 解析</Link>：
+            URLSession、异步回调、以及 Swift async/await 网络模型
+          </li>
+        </ul>
+
+        <p>准备好了吗？打开你的 Xcode，让我们开始动手。</p>
+      </div>
+
+      <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
+        <Link
+          to="/starter"
+          className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+        >
+          ← 开发起步
+        </Link>
+        <Link
+          to="/uikit/practice/form-app"
+          className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
+        >
+          从表单实战开始 →
+        </Link>
       </div>
     </div>
   );

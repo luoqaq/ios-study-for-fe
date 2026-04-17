@@ -12,7 +12,13 @@
 - 第 8 项"第八批内容页"已完成：6 个新页面（涵盖 HealthKit、ARKit、SiriKit、iPad 多窗口、WatchKit、App Clip）。
 - 第 9 项"第九批内容页"已完成：6 个新页面（涵盖 Instruments 调试实战、UIKit 表单实战、Swift 并发排查、OC 内存泄漏实战、App Store 审核、iOS 18 适配）。
 - 第 10 项"第十批内容页"已完成：6 个新页面（涵盖 Swift 值类型与引用类型深入、属性与存储深入、UIKit 导航模式深入、OC 消息转发机制、Instruments 性能优化案例、从零发布一个 App）。
-- 上一轮（第十批）已经通过 `lint` 和 `build` 验证，文档同步已完成。
+- 第 11 项"第十一批内容页"已完成：2 个新页面 + 3 个模块总览升级（涵盖手势与触摸事件、学习路径详解、UIKit 模块总览升级、Advanced 模块总览升级、CollectionView 升级为完整实战）。
+- 第 12 项"第十二批内容页"已完成：6 个早期页面的内容升级（涵盖表单与输入、复杂列表布局、TableView 性能优化、开发起步模块总览、UIViewController 生命周期、持久化与缓存基础）。
+- 第 13 项"第十三批内容页"已完成：3 个实战项目新建（涵盖 CollectionView 电商首页、UIKit 动画实战、Swift POP 网络层实战），并统一了相邻页面的前后链接。
+- 第 14 项"第十四批内容页"已完成：质量优化与导航补全（涵盖 PracticeIndex 升级、TableViewApp 和 OC Intro 添加前后导航链接）。
+- 第 15 项"第十五批内容页"已完成：Vite 代码拆分优化（`manualChunks`），按模块拆分页面组件，消除 build chunk size 警告。
+- 第 16 项"第十六批内容页"已完成：3 个实战项目新建（涵盖性能排查检查清单、SwiftData 待办清单、OC Delegate 模式实战），均已接入路由、导航和前后链接。
+- 上一轮（第十六批）已经通过 `lint` 和 `build` 验证，文档同步已完成。
 - 当前工作区是未提交状态，适合直接继续开发下一批页面或进行质量优化。
 
 ## 已完成到哪一步
@@ -28,7 +34,7 @@
   - `advanced`
 - 旧 `guide / xcode / objc / practice` 路径已经收口为兼容跳转。
 
-### 已补内容页（共 59 个）
+### 已补内容页（共 67 个，另有 12 个模块/早期页面升级/补全）
 
 **第一批 5 个高优页面：**
 - `src/pages/uikit/CollectionView.tsx`
@@ -109,15 +115,48 @@
 - `src/pages/advanced/InstrumentsCase.tsx`
 - `src/pages/advanced/PublishEndToEnd.tsx`
 
+**第十一批 5 个高优页面/升级：**
+- `src/pages/uikit/Gestures.tsx`（新建）
+- `src/pages/roadmap/LearningPath.tsx`（新建）
+- `src/pages/uikit/CollectionView.tsx`（升级为完整实战页）
+- `src/pages/UIKitIndex.tsx`（升级为反映当前完整学习路径的模块总览）
+- `src/pages/AdvancedIndex.tsx`（升级为反映当前所有专题的模块总览）
+
+**第十二批 6 个页面升级：**
+- `src/pages/uikit/FormInput.tsx`（从占位页升级为完整内容页）
+- `src/pages/uikit/CompositionalLayout.tsx`（从占位页升级为完整内容页）
+- `src/pages/uikit/TableViewOptimization.tsx`（增加代码示例与实战建议）
+- `src/pages/xcode/XcodeIndex.tsx`（更新学习路径，覆盖全部子页面）
+- `src/pages/uikit/ViewControllerLifecycle.tsx`（增加 loadView、布局时机、内存警告等深入探讨）
+- `src/pages/advanced/Persistence.tsx`（增加 Core Data 查询代码示例）
+
+**第十三批 3 个实战项目新建：**
+- `src/pages/practice/CollectionViewApp.tsx`（CollectionView 电商首页实战）
+- `src/pages/practice/AnimationApp.tsx`（UIKit 动画实战案例）
+- `src/pages/practice/SwiftProtocolApp.tsx`（Swift POP 网络层抽象实战）
+
+**第十四批 3 个质量优化/导航补全：**
+- `src/pages/practice/PracticeIndex.tsx`（升级案例列表，覆盖全部实战项目）
+- `src/pages/practice/TableViewApp.tsx`（补充前后导航链接）
+- `src/pages/objc/basics/Intro.tsx`（补充前后导航链接）
+
+**第十五批 1 个工程优化：**
+- `vite.config.ts` 配置 `manualChunks`，按模块拆分页面组件，消除 chunk size 警告
+
+**第十六批 3 个实战项目新建：**
+- `src/pages/practice/PerformanceApp.tsx`（性能排查检查清单实战）
+- `src/pages/practice/SwiftDataApp.tsx`（SwiftData 待办清单实战）
+- `src/pages/objc/practice/DelegatePatternApp.tsx`（OC Delegate 模式实战）
+
 以上页面均已接入 `src/data/config.ts` 和 `src/App.tsx`，验证通过。
 
 ## 下一个模型接手后先做什么
 
-1. 评估当前内容页是否已经覆盖核心学习路径（已补 59 个页面，骨架已非常完整）。
+1. 评估当前内容页是否已经覆盖核心学习路径（已补 67 个页面 + 12 个升级/补全，骨架已非常完整）。
 2. 如果继续补内容，建议优先级：
-   - 升级现有"占位说明页"为完整内容页（如 `src/pages/uikit/CollectionView.tsx` 等早期页面内容较简略）
-   - 补充 `Roadmap` 模块的阶段说明和前后衔接页
+   - 检查是否还有早期创建的占位说明页需要升级
    - 补充各模块的"实战/练习"类页面，形成"学完即练"的闭环
+   - 检查并统一所有页面的上一篇 / 下一篇链接一致性
 3. 如果转向质量优化，建议：
    - 检查并统一所有页面的上一篇 / 下一篇链接一致性
    - 检查侧边栏分类与实际页面数量的匹配度
@@ -127,12 +166,11 @@
 
 ## 建议继续补的内容顺序（仅供参考）
 
-1. `UICollectionView 完整实战` → 升级 `/uikit/collection-view`
-2. `UIViewController 生命周期深入` → 升级 `/uikit/view-controller-lifecycle`
-3. `Swift 协议与 POP 深入` → `/swift/oop/protocol`
-4. `Swift 错误处理实战` → `/swift/advanced/error-handling`
-5. `UIKit 手势与触摸事件` → `/uikit/gestures`
-6. `Core Data 数据持久化` → `/advanced/persistence`
+1. `Swift 协议与 POP 深入' → `/swift/oop/protocol`
+2. `Swift 错误处理实战' → `/swift/advanced/error-handling`
+3. `SwiftData 进阶' → `/swift/swiftdata/intro`
+4. `UIKit 实战项目补充' → 新建更多 `/uikit/practice/*`
+5. `Starter 模块查漏补缺' → 检查 `/starter/*` 早期页面内容深度
 
 ## 继续开发时要注意
 
@@ -148,5 +186,5 @@
 
 ## 当前风险
 
-- 无重大风险。站点内容骨架已非常完整（53 个页面），可以继续做细节填充，也可以转向结构优化和体验提升。
-- 注意 build 输出持续提示 chunk size 超过 500KB，如果长期堆内容，后续可能需要引入代码拆分优化。
+- 无重大风险。站点内容骨架已非常完整（64 个页面 + 12 个升级/补全），可以继续做细节填充，也可以转向结构优化和体验提升。
+- build 的 chunk size 警告已通过 `vite.config.ts` 的 `manualChunks` 配置消除：页面按模块拆分、第三方依赖独立成 chunk。

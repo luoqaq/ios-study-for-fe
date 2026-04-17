@@ -93,10 +93,10 @@ UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) {
           ← 表单实战案例
         </Link>
         <Link
-          to="/uikit/practice/todo-app"
+          to="/uikit/practice/animation-app"
           className="flex items-center gap-2 font-medium text-ios-blue hover:underline"
         >
-          实战：Todo App →
+          实战：动画案例 →
         </Link>
       </div>
     </div>

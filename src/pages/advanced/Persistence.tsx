@@ -85,6 +85,33 @@ indexedDB.open("myDB", 1);`}
           它有点像前端的 IndexedDB + ORM 的综合体，但学习曲线更陡。
         </p>
 
+        <CodeCompare
+          title="Core Data 基础查询"
+          leftLang="swift"
+          rightLang="typescript"
+          leftCode={`// Swift: Core Data 查询
+let context = persistentContainer.viewContext
+let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+fetchRequest.predicate = NSPredicate(
+    format: "age > %d", 18
+)
+fetchRequest.sortDescriptors = [
+    NSSortDescriptor(key: "name", ascending: true)
+]
+
+do {
+    let users = try context.fetch(fetchRequest)
+    // 使用 users
+} catch {
+    print("查询失败: \\(error)")
+}`}
+          rightCode={`// TypeScript: Prisma 风格查询
+const users = await prisma.user.findMany({
+    where: { age: { gt: 18 } },
+    orderBy: { name: 'asc' }
+});`}
+        />
+
         <TipBox type="tip" title="现代替代方案">
           如果只是需要轻量级的对象持久化，可以考虑 <code>SwiftData</code>（iOS 17+），它的 API 比 Core Data 现代很多，声明式语法更接近 SwiftUI 风格。
         </TipBox>

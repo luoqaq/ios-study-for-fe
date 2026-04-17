@@ -33,15 +33,37 @@ export default function ViewControllerLifecycle() {
           ]}
         />
 
+        <h2>容易被忽视的关键时机</h2>
+        <ul>
+          <li>
+            <strong>loadView：</strong> 当 <code>view</code> 属性为 nil 时触发，
+            用于手动创建视图层级。如果你用代码写 UI，有时会在这里初始化根 View。
+            但不要在这里调用 <code>super.loadView()</code> 以外的复杂逻辑。
+          </li>
+          <li>
+            <strong>viewWillLayoutSubviews / viewDidLayoutSubviews：</strong>
+            当视图的 bounds 变化时会触发（如旋转屏幕、调整安全区域）。
+            适合做依赖于最终 frame 的布局微调。
+          </li>
+          <li>
+            <strong>didReceiveMemoryWarning：</strong>
+            系统内存紧张时触发。可以在这里释放缓存、清空大图、停止后台任务，避免被系统杀进程。
+          </li>
+        </ul>
+
         <h2>前端最容易犯的错</h2>
         <ol>
-          <li>把每次进入页面都要刷新的逻辑写进 `viewDidLoad`。</li>
+          <li>把每次进入页面都要刷新的逻辑写进 <code>viewDidLoad</code>。</li>
           <li>把网络请求、埋点、UI 初始化全堆在一个函数里。</li>
           <li>页面返回后对象没释放，却不知道该去查循环引用还是导航栈持有。</li>
+          <li>在 <code>viewDidLoad</code> 里做依赖最终布局 frame 的计算，导致尺寸错误。</li>
         </ol>
 
         <TipBox type="tip" title="先记住一个实用分工">
-          `viewDidLoad` 负责“一次性初始化”，`viewWillAppear` 负责“每次展示前刷新”，这套分工足够应付大多数业务页面。
+          <code>viewDidLoad</code> 负责"一次性初始化"，<code>viewWillAppear</code> 负责"每次展示前刷新"，
+          <code>viewDidLayoutSubviews</code> 负责"依赖最终尺寸的布局"，
+          <code>deinit</code> 负责"清理和验证释放"。
+          这套分工足够应付大多数业务页面。
         </TipBox>
 
         <h2>和前端的粗略类比</h2>
@@ -52,14 +74,27 @@ export default function ViewControllerLifecycle() {
             ["`viewDidLoad`", "组件首次 mount 后的一次性 setup"],
             ["`viewWillAppear`", "每次进入路由前的刷新逻辑"],
             ["`viewDidAppear`", "页面真正渲染完成后的副作用"],
+            ["`viewDidLayoutSubviews`", "window resize 后的布局调整"],
             ["`dealloc`", "组件卸载 + 对象释放确认"],
           ]}
         />
 
+        <h2>生命周期与内存管理</h2>
+        <p>
+          一个常见的排查技巧是在 <code>deinit</code> / <code>dealloc</code> 里打印日志：
+        </p>
+        <pre><code className="language-swift">{`deinit {
+    print("ViewController 已释放")
+}`}</code></pre>
+        <p>
+          如果页面返回后没有打印这条日志，说明有别的对象还在强引用这个 ViewController。
+          常见原因：闭包捕获了 self、NotificationCenter 观察者未移除、delegate 没设为 weak。
+        </p>
+
         <h2>下一步该接什么</h2>
         <p>
           理解生命周期之后，最自然的下一步就是页面怎么跳转，也就是导航栈和
-          `push / pop / present` 这些日常业务最常见的动作。
+          <code>push / pop / present</code> 这些日常业务最常见的动作。
         </p>
       </div>
 

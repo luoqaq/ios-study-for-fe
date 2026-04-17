@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CodeCompare from "@/components/CodeCompare";
 import ConceptCard from "@/components/ConceptCard";
 
@@ -92,6 +93,21 @@ const len = emptyStr?.length || 0;"
             <code>@[@"A", @"B"]</code> 是 OC 的 <code>NSArray</code> 数组对象。
           </li>
         </ul>
+      </div>
+
+      <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
+        <Link
+          to="/objc-maintenance"
+          className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+        >
+          ← OC 维护总览
+        </Link>
+        <Link
+          to="/objc-maintenance/basics/datatypes"
+          className="flex items-center gap-2 font-medium text-ios-blue hover:underline"
+        >
+          下一篇：数据类型 →
+        </Link>
       </div>
     </div>
   );

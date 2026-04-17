@@ -7,6 +7,7 @@ import Home from "@/pages/Home";
 // Guide
 import GuideIndex from "@/pages/guide/GuideIndex";
 import BeforeStart from "@/pages/guide/BeforeStart";
+import RoadmapLearningPath from "@/pages/roadmap/LearningPath";
 import UIKitIndex from "@/pages/UIKitIndex";
 import AdvancedIndex from "@/pages/AdvancedIndex";
 import ViewControllerLifecycle from "@/pages/uikit/ViewControllerLifecycle";
@@ -20,6 +21,7 @@ import CompositionalLayoutIntro from "@/pages/uikit/CompositionalLayout";
 import FormInputIntro from "@/pages/uikit/FormInput";
 import AnimationIntro from "@/pages/uikit/Animation";
 import FormValidationIntro from "@/pages/uikit/FormValidation";
+import Gestures from "@/pages/uikit/Gestures";
 import FormApp from "@/pages/uikit/practice/FormApp";
 import TableViewOptimization from "@/pages/uikit/TableViewOptimization";
 
@@ -48,6 +50,7 @@ import ObjcRuntimeIntro from "@/pages/objc/advanced/Runtime";
 import RuntimeDeep from "@/pages/objc/advanced/RuntimeDeep";
 import Forwarding from "@/pages/objc/advanced/Forwarding";
 import ObjcMemoryDebug from "@/pages/objc/practice/MemoryDebug";
+import DelegatePatternApp from "@/pages/objc/practice/DelegatePatternApp";
 import RuntimeTechniquesIntro from "@/pages/objc/advanced/RuntimeTechniques";
 import ObjcCocoaPods from "@/pages/objc/advanced/CocoaPods";
 import SpmVsCocoaPodsIntro from "@/pages/objc/advanced/SpmVsCocoaPods";
@@ -129,7 +132,12 @@ import PublishEndToEnd from "@/pages/advanced/PublishEndToEnd";
 // Practice
 import TodoApp from "@/pages/practice/TodoApp";
 import NetworkApp from "@/pages/practice/NetworkApp";
+import PerformanceApp from "@/pages/practice/PerformanceApp";
 import TableViewApp from "@/pages/practice/TableViewApp";
+import CollectionViewApp from "@/pages/practice/CollectionViewApp";
+import AnimationApp from "@/pages/practice/AnimationApp";
+import SwiftProtocolApp from "@/pages/practice/SwiftProtocolApp";
+import SwiftDataApp from "@/pages/practice/SwiftDataApp";
 import MiniSwiftUI from "@/pages/practice/MiniSwiftUI";
 
 function App() {
@@ -140,6 +148,10 @@ function App() {
         {/* Guide */}
         <Route path="/roadmap" element={<GuideIndex />} />
         <Route path="/roadmap/before-start" element={<BeforeStart />} />
+        <Route
+          path="/roadmap/learning-path"
+          element={<RoadmapLearningPath />}
+        />
         <Route path="/guide" element={<Navigate to="/roadmap" replace />} />
         <Route
           path="/guide/before-start"
@@ -195,6 +207,7 @@ function App() {
           path="/uikit/form-validation"
           element={<FormValidationIntro />}
         />
+        <Route path="/uikit/gestures" element={<Gestures />} />
         <Route path="/uikit/practice/form-app" element={<FormApp />} />
         <Route path="/uikit/animation" element={<AnimationIntro />} />
         <Route
@@ -205,6 +218,14 @@ function App() {
         <Route
           path="/uikit/practice/tableview-app"
           element={<TableViewApp />}
+        />
+        <Route
+          path="/uikit/practice/collection-view-app"
+          element={<CollectionViewApp />}
+        />
+        <Route
+          path="/uikit/practice/animation-app"
+          element={<AnimationApp />}
         />
 
         {/* ObjC */}
@@ -358,6 +379,10 @@ function App() {
           element={<ObjcMemoryDebug />}
         />
         <Route
+          path="/objc-maintenance/practice/delegate-pattern-app"
+          element={<DelegatePatternApp />}
+        />
+        <Route
           path="/objc-maintenance/advanced/runtime-techniques"
           element={<RuntimeTechniquesIntro />}
         />
@@ -452,6 +477,14 @@ function App() {
           path="/swift/advanced/combine"
           element={<SwiftCombineIntro />}
         />
+        <Route
+          path="/swift/practice/protocol-app"
+          element={<SwiftProtocolApp />}
+        />
+        <Route
+          path="/swift/practice/swiftdata-app"
+          element={<SwiftDataApp />}
+        />
 
         <Route
           path="/swift/swiftui/intro"
@@ -524,6 +557,10 @@ function App() {
         <Route
           path="/advanced/practice/network-app"
           element={<NetworkApp />}
+        />
+        <Route
+          path="/advanced/practice/performance-app"
+          element={<PerformanceApp />}
         />
         <Route
           path="/practice/tableview-app/intro"

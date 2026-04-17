@@ -173,10 +173,10 @@ export default function Counter() {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/swift/swiftdata/intro"
+          to="/swift/practice/swiftdata-app"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← SwiftData 入门
+          ← SwiftData 待办清单实战
         </Link>
         <Link
           to="/swift"

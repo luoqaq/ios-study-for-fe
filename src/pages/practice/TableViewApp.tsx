@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CodeCompare from "@/components/CodeCompare";
 import TipBox from "@/components/TipBox";
 
@@ -131,6 +132,21 @@ window.addEventListener('scroll', () => {
           <code>prepareForReuse</code> 方法清理状态。这就是命令式 UI
           的痛苦之处（SwiftUI 和 React 完美解决了这个问题）。
         </p>
+      </div>
+
+      <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
+        <Link
+          to="/uikit/practice/todo-app"
+          className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+        >
+          ← Todo App
+        </Link>
+        <Link
+          to="/uikit"
+          className="flex items-center gap-2 font-medium text-ios-blue hover:underline"
+        >
+          返回 UIKit 总览 →
+        </Link>
       </div>
     </div>
   );

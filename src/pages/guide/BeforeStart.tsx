@@ -105,17 +105,17 @@ export default function BeforeStart() {
         </ol>
 
         <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
-        <Link
-          to="/roadmap"
-          className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-        >
-          ← 学习路线
-        </Link>
-        <Link
-          to="/objc-maintenance"
-          className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
-        >
-            开始 Objective-C 教程 →
+          <Link
+            to="/roadmap"
+            className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+          >
+            ← 学习路线
+          </Link>
+          <Link
+            to="/roadmap/learning-path"
+            className="flex items-center gap-2 text-ios-blue hover:underline font-medium"
+          >
+            学习路径详解 →
           </Link>
         </div>
       </div>

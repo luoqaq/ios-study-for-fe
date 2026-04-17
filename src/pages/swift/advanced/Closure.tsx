@@ -154,10 +154,10 @@ const strings = numbers.map((num) => String(num));`}
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/swift/oop/generics-advanced"
+          to="/swift/practice/protocol-app"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← 泛型与协议导向编程
+          ← Swift POP 网络层实战
         </Link>
         <Link
           to="/swift/advanced/closure-memory"

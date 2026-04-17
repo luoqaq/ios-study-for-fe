@@ -33,6 +33,10 @@ export default function GuideIndex() {
             ，建立正确的心智模型。
           </li>
           <li>
+            查看 <Link to="/roadmap/learning-path">学习路径详解</Link>
+            ，了解完整的五阶段学习地图。
+          </li>
+          <li>
             浏览 <Link to="/starter">开发起步</Link>，熟悉开发工具。
           </li>
         </ul>

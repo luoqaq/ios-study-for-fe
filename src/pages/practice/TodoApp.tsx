@@ -136,10 +136,10 @@ export default function TodoApp() {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/uikit/auto-layout"
+          to="/uikit/practice/collection-view-app"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← Auto Layout
+          ← CollectionView 电商首页
         </Link>
         <Link
           to="/uikit/practice/tableview-app"

@@ -74,10 +74,10 @@ export default function FormApp() {
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">
         <Link
-          to="/uikit/form-validation"
+          to="/uikit/gestures"
           className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
         >
-          ← 键盘与表单校验
+          ← 手势与触摸事件
         </Link>
         <Link
           to="/uikit/animation"

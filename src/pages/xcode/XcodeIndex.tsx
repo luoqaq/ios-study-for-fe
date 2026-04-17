@@ -46,34 +46,40 @@ export default function XcodeIndex() {
         </ul>
 
         <h2>学习路径</h2>
-        <p>这一模块现在作为“开发起步”存在，我们将按实际开发流程来熟悉 Xcode：</p>
+        <p>这一模块按实际开发流程来熟悉 Xcode 和工程基础：</p>
 
-        <ol>
-          <li>
-            <Link to="/starter/setup">环境安装与配置</Link>：下载 Xcode
-            并配置开发者证书。
-          </li>
-          <li>
-            <Link to="/starter/interface">界面导览</Link>：认识 Xcode
-            复杂的面板分布。
-          </li>
-          <li>
-            <Link to="/starter/project">创建项目</Link>
-            ：从新建一个工程开始，理解目录结构。
-          </li>
-          <li>
-            <Link to="/starter/simulator">运行与模拟器</Link>：第一次把你的 App
-            跑起来。
-          </li>
-          <li>
-            <Link to="/starter/debugging">断点与调试</Link>
-            ：像在浏览器打断点一样在 Xcode 中排查 Bug。
-          </li>
-          <li>
-            <Link to="/starter/storyboard">可视化 UI (Storyboard)</Link>
-            ：了解经典的可视化搭建方式。
-          </li>
-        </ol>
+        <h3>环境搭建</h3>
+        <ul>
+          <li><Link to="/starter/setup">环境安装与配置</Link>：下载 Xcode 并配置开发者证书</li>
+          <li><Link to="/starter/interface">界面导览</Link>：认识 Xcode 复杂的面板分布</li>
+        </ul>
+
+        <h3>项目与构建</h3>
+        <ul>
+          <li><Link to="/starter/project">创建项目</Link>：从新建一个工程开始，理解目录结构</li>
+          <li><Link to="/starter/build-run">构建与运行</Link>：编译、签名、安装到设备的全流程</li>
+          <li><Link to="/starter/project-config">Info.plist / Target / Scheme</Link>：理解工程配置的三要素</li>
+          <li><Link to="/starter/build-configurations">Scheme / Build Configuration 深入</Link>：Debug / Release、多环境配置</li>
+        </ul>
+
+        <h3>调试与运行</h3>
+        <ul>
+          <li><Link to="/starter/simulator">运行与模拟器</Link>：第一次把你的 App 跑起来</li>
+          <li><Link to="/starter/debugging">断点与调试</Link>：像在浏览器打断点一样在 Xcode 中排查 Bug</li>
+          <li><Link to="/starter/debugging-advanced">调试与 Instruments 结合实战</Link>：从 print 排查升级到用工具说话</li>
+        </ul>
+
+        <h3>UI 搭建</h3>
+        <ul>
+          <li><Link to="/starter/storyboard">可视化 UI (Storyboard)</Link>：了解经典的可视化搭建方式</li>
+        </ul>
+
+        <h2>接下来该去哪</h2>
+        <p>
+          完成开发起步后，下一步就是进入{" "}
+          <Link to="/uikit">UIKit</Link>，学习页面生命周期、导航和列表，
+          把真正做业务的能力建立起来。
+        </p>
       </div>
 
       <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-gray-800">

@@ -34,10 +34,10 @@ export default function FormValidationIntro() {
           ← 复杂列表布局
         </Link>
         <Link
-          to="/uikit/practice/form-app"
+          to="/uikit/gestures"
           className="flex items-center gap-2 font-medium text-ios-blue hover:underline"
         >
-          实战：UIKit 表单案例 →
+          下一篇：手势与触摸事件 →
         </Link>
       </div>
     </div>
