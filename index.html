@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("ios-study-theme") || "system";
+          var followsSystem = theme !== "light" && theme !== "dark";
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var shouldUseDark = theme === "dark" || (followsSystem && prefersDark);
+
+          document.documentElement.classList.toggle("dark", shouldUseDark);
+          document.documentElement.dataset.theme = shouldUseDark ? "dark" : "light";
+          document.documentElement.style.colorScheme = shouldUseDark ? "dark" : "light";
+        } catch (error) {
+          console.warn("Failed to apply saved theme", error);
+        }
+      })();
+    </script>
     <title>iOS学习指南 - 为前端开发者打造</title>
   </head>
   <body>

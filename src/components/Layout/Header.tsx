@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Github, Apple } from "lucide-react";
 import { nav } from "@/data/config";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -45,6 +46,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
             </Link>
           ))}
           <div className="h-5 w-px bg-gray-200 dark:bg-gray-700 mx-2"></div>
+          <ThemeToggle />
           <a
             href="https://github.com/luoqaq/ios-study-for-fe"
             target="_blank"
@@ -56,7 +58,8 @@ export default function Header({ isMenuOpen, setIsMenuOpen }: HeaderProps) {
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-none p-2"

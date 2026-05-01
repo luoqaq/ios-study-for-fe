@@ -1,5 +1,9 @@
+import { useEffect, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import {
+  oneLight,
+  vscDarkPlus,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface CodeCompareProps {
   title?: string;
@@ -11,6 +15,34 @@ interface CodeCompareProps {
   rightCode: string;
 }
 
+function getIsDarkTheme() {
+  if (typeof document === "undefined") return false;
+
+  return document.documentElement.classList.contains("dark");
+}
+
+function useIsDarkTheme() {
+  const [isDarkTheme, setIsDarkTheme] = useState(getIsDarkTheme);
+
+  useEffect(() => {
+    const updateTheme = () => setIsDarkTheme(getIsDarkTheme());
+    const observer = new MutationObserver(updateTheme);
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class", "data-theme"],
+    });
+
+    updateTheme();
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  return isDarkTheme;
+}
+
 export default function CodeCompare({
   title,
   leftTitle = "Objective-C / Swift",
@@ -20,6 +52,13 @@ export default function CodeCompare({
   leftCode,
   rightCode,
 }: CodeCompareProps) {
+  const isDarkTheme = useIsDarkTheme();
+  const syntaxTheme = isDarkTheme ? vscDarkPlus : oneLight;
+  const codePanelClass = isDarkTheme
+    ? "bg-[#1e1e1e]"
+    : "bg-[#fafafa]";
+  const codeTextColor = isDarkTheme ? "#f4f4f5" : "#24292f";
+
   return (
     <div className="my-8 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm">
       {title && (
@@ -30,15 +69,18 @@ export default function CodeCompare({
 
       <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-gray-800">
         {/* Left Side - iOS */}
-        <div className="flex-1 min-w-0 w-full bg-gray-50 dark:bg-[#1e1e1e]">
+        <div className={`flex-1 min-w-0 w-full ${codePanelClass}`}>
           <div className="px-4 py-2 text-xs font-semibold tracking-wider text-gray-500 uppercase flex items-center gap-2 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
             <span className="w-2 h-2 rounded-full bg-ios-blue"></span>
             {leftTitle}
           </div>
-          <div className="p-0 overflow-x-auto text-sm">
+          <div className={`p-0 overflow-x-auto text-sm ${codePanelClass}`}>
             <SyntaxHighlighter
               language={leftLang}
-              style={vscDarkPlus}
+              style={syntaxTheme}
+              codeTagProps={{
+                style: { color: codeTextColor },
+              }}
               customStyle={{
                 margin: 0,
                 padding: "1rem",
@@ -51,15 +93,18 @@ export default function CodeCompare({
         </div>
 
         {/* Right Side - Web */}
-        <div className="flex-1 min-w-0 w-full bg-gray-50 dark:bg-[#1e1e1e]">
+        <div className={`flex-1 min-w-0 w-full ${codePanelClass}`}>
           <div className="px-4 py-2 text-xs font-semibold tracking-wider text-gray-500 uppercase flex items-center gap-2 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
             <span className="w-2 h-2 rounded-full bg-[#F7DF1E]"></span>
             {rightTitle}
           </div>
-          <div className="p-0 overflow-x-auto text-sm">
+          <div className={`p-0 overflow-x-auto text-sm ${codePanelClass}`}>
             <SyntaxHighlighter
               language={rightLang}
-              style={vscDarkPlus}
+              style={syntaxTheme}
+              codeTagProps={{
+                style: { color: codeTextColor },
+              }}
               customStyle={{
                 margin: 0,
                 padding: "1rem",

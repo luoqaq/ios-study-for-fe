@@ -9,17 +9,23 @@
   --text-muted: #666666;
   --border-color: #e5e5e5;
   --sidebar-bg: #f8f9fa;
-  --code-bg: #1e1e1e;
+  --code-bg: #f6f8fa;
+  --code-text: #24292f;
+  --inline-code-text: #24292f;
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --text-muted: #999999;
-    --border-color: #333333;
-    --sidebar-bg: #1a1a1a;
-  }
+:root.dark,
+:root[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --text-muted: #999999;
+  --border-color: #333333;
+  --sidebar-bg: #1a1a1a;
+  --code-bg: #1e1e1e;
+  --code-text: #f4f4f5;
+  --inline-code-text: #e5e7eb;
+  color-scheme: dark;
 }
 
 body {
@@ -43,10 +49,26 @@ body {
 }
 
 /* Code highlight override */
-pre[class*="language-"] {
+pre,
+pre[class*="language-"],
+.prose pre,
+.markdown-body pre {
   margin: 0 !important;
   border-radius: 0.5rem !important;
   background: var(--code-bg) !important;
+  color: var(--code-text) !important;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+pre code,
+pre code[class*="language-"],
+.prose pre code,
+.markdown-body pre code {
+  color: var(--code-text) !important;
+  background: transparent !important;
+  padding: 0 !important;
+  text-shadow: none;
 }
 
 /* Markdown 样式 */
@@ -79,5 +101,12 @@ pre[class*="language-"] {
 }
 
 .markdown-body code:not([class*="language-"]) {
-  @apply px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-sm font-mono text-ios-orange;
+  @apply px-1.5 py-0.5 rounded text-sm font-mono font-medium;
+  color: var(--inline-code-text);
+}
+
+.prose code:not(pre code),
+:not(pre) > code {
+  @apply px-1.5 py-0.5 rounded text-sm font-mono font-medium;
+  color: var(--inline-code-text);
 }

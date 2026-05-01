@@ -143,8 +143,9 @@ import MiniSwiftUI from "@/pages/practice/MiniSwiftUI";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
       <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+
         {/* Guide */}
         <Route path="/roadmap" element={<GuideIndex />} />
         <Route path="/roadmap/before-start" element={<BeforeStart />} />
